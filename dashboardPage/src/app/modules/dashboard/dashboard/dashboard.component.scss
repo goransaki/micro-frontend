@@ -1,0 +1,76 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.car-item {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 40px 5px rgb(0 0 0 / 5%);
+  transition: all .5s ease-in-out;
+
+  .car-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .car-content {
+    padding-top: 20px;
+  }
+}
+
+
+.car-status {
+  padding: 2px 8px;
+  border-radius: 6px;
+  box-shadow: 0 0 40px 5px rgb(0 0 0 / 5%);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .5px;
+  z-index: 1;
+}
+
+.car-footer {
+  position: relative;
+
+  button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.car-img img {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.car-price {
+  font-size: 19px;
+  font-weight: 600;
+  color: #EF1D26;
+}
+
+
+.filters {
+  margin-bottom: 30px;
+
+  .checkbox-wrapper {
+    margin-right: 20px;
+  }
+
+  .form-check-label {
+    position: relative;
+    top: 4px;
+  }
+}
+
+.pull-left {
+  float: left;
+}
+
+.p-lr-15 {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}

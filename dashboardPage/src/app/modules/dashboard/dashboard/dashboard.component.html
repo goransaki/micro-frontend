@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row filters p-lr-15">
+    <form [formGroup]="form" (ngSubmit)="filter()" novalidate>
+      <div class="checkbox-wrapper form-check d-inline-block pull-left" *ngFor="let manufacturer of manufacturerList; let i=index">
+        <input class="form-check-input" type="checkbox" formArrayName="selectedManufacturers"
+               [value]="manufacturer.value" (change)="onCheckboxChange($event)">
+        <label class="form-check-label">
+          {{ manufacturer.name}}
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-danger" >Pretraži</button>
+    </form>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-3 pull-left p-lr-15" *ngFor="let vehicle of vehicleList">
+        <div class="car-item wow fadeInUp" data-wow-delay=".25s">
+          <div class="car-img">
+            <img [src]="vehicle.imageUrl" alt="">
+          </div>
+          <div class="car-content">
+            <div class="car-top">
+              <h4>{{vehicle.title}}</h4>
+            </div>
+            <div class="car-footer">
+              <span class="car-price">{{vehicle.price}}</span>
+              <button class="btn btn-danger" [routerLink]="['table/' + vehicle.id]">Pregled</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
