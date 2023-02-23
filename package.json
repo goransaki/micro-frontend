@@ -1,0 +1,13 @@
+{
+  "name": "register-page",
+  "version": "0.0.0",
+  "scripts": {
+    "shell": "cd shell && npm run start",
+    "layout": "cd layout && npm run start",
+    "registerPage": "cd registerPage && npm run start",
+    "dashboardPage": "cd dashboardPage && npm run start",
+    "tablePage": "cd tablePage && npm run start",
+    "staticPage": "cd staticPage && npm run start",
+    "run:all": "start npm run shell && start npm run layout && start npm run registerPage && start npm run dashboardPage && start npm run tablePage && start npm run staticPage"
+  }
+}

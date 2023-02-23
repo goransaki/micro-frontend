@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { NgxCommonUiLibService } from 'ngx-common-ui-lib';
-import {fromEvent, Subscription} from "rxjs";
+import {Component, OnInit} from '@angular/core';
+import {CarService} from "../../../../../services/car.service";
+import {VehicleModel} from "../../../../../models/VehicleModel";
 
 @Component({
   selector: 'app-static-page',
@@ -8,25 +8,31 @@ import {fromEvent, Subscription} from "rxjs";
   styleUrls: ['./static-page.component.scss']
 })
 export class StaticPageComponent implements OnInit {
-  $eventBus?: Subscription;
-  value: any;
+  public vehicleList: VehicleModel[] = [];
 
-  constructor(private service: NgxCommonUiLibService) {
-    service.print();
-  }
-
-  onEventHandler(e: CustomEvent) {
-    console.log("Evp me pvde");
-    if (e.detail.eventType === 'auth-register') {
-     this.value = e.detail;
-     console.log(this.value);
-    }
+  constructor(private carService: CarService) {
   }
 
   ngOnInit() {
-    console.log( "Nastao sam opet " + this.value );
-    this.$eventBus = fromEvent<CustomEvent>(window, 'app-event-bus').subscribe((e) => this.onEventHandler(e));
-    console.log(this.$eventBus);
+    let orderedVehicleIds: any[] = [];
+    const stringIds = localStorage.getItem('orderedVehicleIds');
+    if (stringIds) {
+      orderedVehicleIds = JSON.parse(stringIds);
+    }
+    if (!orderedVehicleIds.length) {
+      return;
+    }
+    this.carService.getVehicleList().subscribe(data => {
+      if (!data.length) {
+        return;
+      }
+      data.forEach(vehicle => {
+        const existingId = orderedVehicleIds.find(id => id == vehicle.id)
+        if (existingId) {
+          this.vehicleList.push(vehicle);
+        }
+      })
+    })
   }
 
 }

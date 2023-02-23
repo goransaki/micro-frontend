@@ -1,11 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DashboardRoutingModule } from './dashboard-routing.module';
-import { ChartsModule } from './components/charts/charts.module';
-import { NgxCommonUiLibModule } from 'ngx-common-ui-lib';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {DashboardRoutingModule} from './dashboard-routing.module';
+import {ChartsModule} from './components/charts/charts.module';
+import {NgxCommonUiLibModule} from 'ngx-common-ui-lib';
 import {ReactiveFormsModule} from "@angular/forms";
-
+import {VehicleService} from "../../../services/vehicle.service";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -15,7 +16,12 @@ import {ReactiveFormsModule} from "@angular/forms";
     DashboardRoutingModule,
     ChartsModule,
     NgxCommonUiLibModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
+  providers: [
+    VehicleService
   ]
 })
-export class DashboardModule { }
+export class DashboardModule {
+}
