@@ -1,2 +1,146 @@
-<div *ngIf="vehicle">{{vehicle.title}}</div>
-<button class="btn btn-danger" (click)="order()">Poruči</button>
+<div class="container" *ngIf="vehicle">
+  <div class="car-single-widget">
+    <h4 class="mb-4">{{vehicle.title}}</h4>
+  </div>
+  <div class="car-single-widget">
+    <h4 class="mb-4">Karakteristike</h4>
+    <div class="car-key-info">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="cold-md-4 col-lg-3 pull-left">
+            <div class="car-key-item">
+              <div class="car-key-icon">
+                <i class="flaticon-drive"></i>
+              </div>
+              <div class="car-key-content">
+                <span>Body Type</span>
+                <h6>Coupe</h6>
+              </div>
+            </div>
+          </div>
+          <div class="cold-md-4 col-lg-3 pull-left">
+            <div class="car-key-item">
+              <div class="car-key-icon">
+                <i class="flaticon-drive"></i>
+              </div>
+              <div class="car-key-content">
+                <span>Condition</span>
+                <h6>Brand New</h6>
+              </div>
+            </div>
+          </div>
+          <div class="cold-md-4 col-lg-3 pull-left">
+            <div class="car-key-item">
+              <div class="car-key-icon">
+                <i class="flaticon-speedometer"></i>
+              </div>
+              <div class="car-key-content">
+                <span>Mileage</span>
+                <h6>50,000 (Mi)</h6>
+              </div>
+            </div>
+          </div>
+          <div class="cold-md-4 col-lg-3 pull-left">
+            <div class="car-key-item">
+              <div class="car-key-icon">
+                <i class="flaticon-settings"></i>
+              </div>
+              <div class="car-key-content">
+                <span>Transmission</span>
+                <h6>Autometic</h6>
+              </div>
+            </div>
+          </div>
+          <div class="cold-md-4 col-lg-3 pull-left">
+            <div class="car-key-item">
+              <div class="car-key-icon">
+                <i class="flaticon-drive"></i>
+              </div>
+              <div class="car-key-content">
+                <span>Year</span>
+                <h6>2023</h6>
+              </div>
+            </div>
+          </div>
+          <div class="cold-md-4 col-lg-3 pull-left">
+            <div class="car-key-item">
+              <div class="car-key-icon">
+                <i class="flaticon-gas-station"></i>
+              </div>
+              <div class="car-key-content">
+                <span>Fuel Type</span>
+                <h6>Diesel</h6>
+              </div>
+            </div>
+          </div>
+          <div class="cold-md-4 col-lg-3 pull-left">
+            <div class="car-key-item">
+              <div class="car-key-icon">
+                <i class="flaticon-drive"></i>
+              </div>
+              <div class="car-key-content">
+                <span>Color</span>
+                <h6>Red</h6>
+              </div>
+            </div>
+          </div>
+          <div class="cold-md-4 col-lg-3 pull-left">
+            <div class="car-key-item">
+              <div class="car-key-icon">
+                <i class="flaticon-drive"></i>
+              </div>
+              <div class="car-key-content">
+                <span>Doors</span>
+                <h6>2 Doors</h6>
+              </div>
+            </div>
+          </div>
+          <div class="cold-md-4 col-lg-3 pull-left">
+            <div class="car-key-item">
+              <div class="car-key-icon">
+                <i class="flaticon-drive"></i>
+              </div>
+              <div class="car-key-content">
+                <span>Cylinders</span>
+                <h6>05</h6>
+              </div>
+            </div>
+          </div>
+          <div class="cold-md-4 col-lg-3 pull-left">
+            <div class="car-key-item">
+              <div class="car-key-icon">
+                <i class="flaticon-drive"></i>
+              </div>
+              <div class="car-key-content">
+                <span>Engine Size</span>
+                <h6>2,000 (cc)</h6>
+              </div>
+            </div>
+          </div>
+          <div class="cold-md-4 col-lg-3 pull-left">
+            <div class="car-key-item">
+              <div class="car-key-icon">
+                <i class="flaticon-drive"></i>
+              </div>
+              <div class="car-key-content">
+                <span>VIN</span>
+                <h6>532GAFDSUY</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="car-single-widget">
+    <h4 class="mb-4">Opis</h4>
+    <div class="car-key-info">
+      <div class="row">
+        <div class="cold-md-4 col-lg-3 pull-left">
+          {{vehicle.description}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-danger" (click)="order()">Poruči</button>
+</div>

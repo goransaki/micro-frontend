@@ -10,7 +10,7 @@ import {VehicleModel} from "../../../../../models/VehicleModel";
 })
 export class DetailsPageComponent implements OnInit {
   public vehicleList: VehicleModel[] = [];
-  public vehicle: any;
+  public vehicle: VehicleModel | undefined;
 
   constructor(private route: ActivatedRoute, private router: Router, private carService: CarService) {
   }
@@ -29,7 +29,7 @@ export class DetailsPageComponent implements OnInit {
     if (stringIds) {
       orderedVehicleIds = JSON.parse(stringIds);
     }
-    orderedVehicleIds.push(this.vehicle.id);
+    orderedVehicleIds.push(this.vehicle?.id);
     localStorage.setItem('orderedVehicleIds', JSON.stringify(orderedVehicleIds));
     this.router.navigate(['/order']);
   }

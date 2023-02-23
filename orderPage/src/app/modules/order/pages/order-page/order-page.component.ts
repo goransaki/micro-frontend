@@ -47,7 +47,7 @@ export class OrderPageComponent implements OnInit {
     this.removeVehicleFromOrders(orderedVehicleIds, id);
   }
 
-  private removeVehicleFromOrders(orderedVehicleIds: any[], id: string) {
+  private removeVehicleFromOrders(orderedVehicleIds: any[], id: string): void {
     orderedVehicleIds.forEach((element, index) => {
       if (element == id) {
         orderedVehicleIds.splice(index, 1);
