@@ -16,12 +16,15 @@ export class OrderPageComponent implements OnInit {
   ngOnInit() {
     let orderedVehicleIds: any[] = [];
     const stringIds = localStorage.getItem('orderedVehicleIds');
+
     if (stringIds) {
       orderedVehicleIds = JSON.parse(stringIds);
     }
+
     if (!orderedVehicleIds.length) {
       return;
     }
+
     this.carService.getVehicleList().subscribe(data => {
       if (!data.length) {
         return;
@@ -41,9 +44,18 @@ export class OrderPageComponent implements OnInit {
     if (stringIds) {
       orderedVehicleIds = JSON.parse(stringIds);
     }
+    this.removeVehicleFromOrders(orderedVehicleIds, id);
+  }
+
+  private removeVehicleFromOrders(orderedVehicleIds: any[], id: string) {
     orderedVehicleIds.forEach((element, index) => {
       if (element == id) {
         orderedVehicleIds.splice(index, 1);
+      }
+    });
+    this.vehicleList.forEach((element, index) => {
+      if (element.id == id) {
+        this.vehicleList.splice(index, 1);
       }
     });
     localStorage.setItem('orderedVehicleIds', JSON.stringify(orderedVehicleIds));
