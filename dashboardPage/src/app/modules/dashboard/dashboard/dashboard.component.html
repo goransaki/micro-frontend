@@ -24,8 +24,8 @@
               <h4>{{vehicle.title}}</h4>
             </div>
             <div class="car-footer">
-              <span class="car-price">{{vehicle.price}}</span>
-              <button class="btn btn-danger" [routerLink]="['table/' + vehicle.id]">Pregled</button>
+              <span class="car-price">{{vehicle.price | currency: 'EUR' }}</span>
+              <button class="btn btn-danger" [routerLink]="['details/' + vehicle.id]">Pregled</button>
             </div>
           </div>
         </div>

@@ -1,6 +1,5 @@
 <nav>
-  <a *ngIf="isLogged" [routerLink]="['/']">Home</a>
-  <a *ngIf="!isLogged" [routerLink]="['/signup']" routerLinkActive="active-link">Sign Up</a>
-  <a [routerLink]="['/table']" routerLinkActive="active-link">Table</a>
-  <a [routerLink]="['/static']" routerLinkActive="active-link">Static</a>
+  <a *ngIf="isLogged" [routerLink]="['/']">Početna</a>
+  <a *ngIf="!isLogged" [routerLink]="['/signup']" routerLinkActive="active-link">Uloguj se</a>
+  <a [routerLink]="['/order']" routerLinkActive="active-link">Narudžbe</a>
 </nav>

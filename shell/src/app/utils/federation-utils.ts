@@ -39,7 +39,7 @@ async function lookupExposedModule<T>(
   await __webpack_init_sharing__('default');
   const container = window[remoteName] as Container; // or get the container somewhere else
   // Initialize the container, it may provide shared modules
-
+console.log(container);
   await container.init(__webpack_share_scopes__.default);
   const factory = await container.get(exposedModule);
   const Module = factory();

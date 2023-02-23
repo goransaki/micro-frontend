@@ -18,11 +18,11 @@ export const MICROFRONTEND_ROUTES: Microfrontend[] = [
     canActivate: [LoggedOnlyGuard]
   },
   {
-    ...environment.microfrontends.tablePage,
-    exposedModule: environment.microfrontends.tablePage.exposedModule[0],
-    displayName: 'Table',
-    routePath: 'table',
-    ngModuleName: 'TablePageModule',
+    ...environment.microfrontends.detailsPage,
+    exposedModule: environment.microfrontends.detailsPage.exposedModule[0],
+    displayName: 'Details',
+    routePath: 'details',
+    ngModuleName: 'DetailsPageModule',
   },
   {
     ...environment.microfrontends.registerPage,
@@ -34,10 +34,10 @@ export const MICROFRONTEND_ROUTES: Microfrontend[] = [
     canActivate: [UnloggedOnlyGuard]
   },
   {
-    ...environment.microfrontends.staticPage,
-    exposedModule: environment.microfrontends.staticPage.exposedModule[0],
-    displayName: 'Static page',
-    routePath: 'static',
-    ngModuleName: 'StaticPageModule',
+    ...environment.microfrontends.orderPage,
+    exposedModule: environment.microfrontends.orderPage.exposedModule[0],
+    displayName: 'Order page',
+    routePath: 'order',
+    ngModuleName: 'OrderPageModule',
   }
 ]
